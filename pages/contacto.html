@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - ARTEQ</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome/webfonts/css/all.min.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html" class="logo-link">
+                    <img src="../assets/images/logo.ico" alt="ARTEQ Logo" class="logo-img">
+                    <h2>ARTEQ</h2>
+                </a>
+            </div>
+            </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="contact-title">Kontaktieren Sie ARTEQ</h1>
+            
+            <div class="contact-form-container">
+                <form id="contact-form" class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name" class="required-field">Vollständiger Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required-field">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service" class="required-field">Dienstleistung von Interesse</label>
+                        <select id="service" name="service" required>
+                            <option value="">Wählen Sie eine Dienstleistung</option>
+                            <option value="desalojo">Haushaltsauflösung</option>
+                            <option value="mudanzas">Umzüge</option>
+                            <option value="transporte">Transport</option>
+                            <option value="limpieza">Reinigung</option>
+                            <option value="conserjeria">Hausmeisterservice</option>
+                            <option value="plagas">Ungezieferentfernung</option>
+                        </select>
+                        <div id="service-error" class="error-message">
+                            Bitte wählen Sie eine Dienstleistung
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" rows="4" 
+                                  maxlength="600"
+                                  oninput="updateCharCounter(this)"></textarea>
+                        <div id="char-counter" class="char-counter normal">
+                            <span id="char-count">0</span>/600 Zeichen
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" class="form__checkbox" id="termsCheckbox" name="termsCheckbox" required>
+                        <label for="termsCheckbox" class="form-termsandConditions">
+                            Ich habe die <a href="terms.html" target="_blank" rel="noopener noreferrer">Allgemeinen Geschäftsbedingungen</a> gelesen und akzeptiere sie
+                        </label>
+                        <div id="terms-error" class="error-message">
+                            Bitte akzeptieren Sie die Allgemeinen Geschäftsbedingungen
+                        </div>
+                    </div>
+                    
+                    <button type="submit" onclick="return validateForm()">Nachricht senden</button>
+                </form>
+                
+                <div class="contact-info">
+                    <p><strong>Sie können uns auch kontaktieren über:</strong></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:061517870619">+49 6151 787 0 619</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="javascript:linkTo_UnCryptMailto('jotujp`bsdspnqfrnbns')">info(at)arte-q(dot)com</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/491793723633?text=Hallo%20ARTEQ%2C%20ich%20m%C3%B6chte%20mehr%20%C3%BCber%20Ihre%20Dienstleistungen%20erfahren" target="_blank">+49 179 372 3633</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p><span id="current-year"></span> ARTEQ. Alle Rechte vorbehalten. | <a href="../pages/imprenta.html" style="color: inherit; text-decoration: none;">Impressum</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/email-obfuscator.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
