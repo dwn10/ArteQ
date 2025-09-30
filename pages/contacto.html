@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
-    <link rel="stylesheet" href="../assets/css/fontawesome/webfonts/css/all.min.css"> 
+    <link rel="stylesheet" href="../assets/css/fontawesome/webfonts/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -57,6 +57,20 @@
                             Bitte wählen Sie eine Dienstleistung
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="appointmentDate" class="required-field">Datum</label>
+                        <input type="date" id="appointmentDate" name="appointmentDate" required>
+                        <div id="date-error" class="error-message">Bitte wählen Sie ein Datum</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime" class="required-field">Uhrzeit</label>
+                        <select id="appointmentTime" name="appointmentTime" required disabled>
+                            <option value="">Wählen Sie zuerst ein Datum aus</option>
+                        </select>
+                        <div id="time-error" class="error-message">Bitte wählen Sie eine Uhrzeit</div>
+                    </div>
                     
                     <div class="form-group">
                         <label for="message">Nachricht</label>
@@ -78,7 +92,7 @@
                         </div>
                     </div>
                     
-                    <button type="submit" onclick="return validateForm()">Nachricht senden</button>
+                    <button type="submit">Nachricht senden</button>
                 </form>
                 
                 <div class="contact-info">

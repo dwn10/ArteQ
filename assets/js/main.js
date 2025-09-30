@@ -119,16 +119,44 @@ function handleFormSubmit(event) {
     // Reset previous errors
     const serviceError = document.getElementById('service-error');
     const serviceSelect = document.getElementById('service');
+    const dateError = document.getElementById('date-error');
+    const dateInput = document.getElementById('appointmentDate');
+    const timeError = document.getElementById('time-error');
+    const timeSelect = document.getElementById('appointmentTime');
     
     if (serviceError) serviceError.style.display = 'none';
     if (serviceSelect) serviceSelect.classList.remove('field-error');
-    
+    if (dateError) dateError.style.display = 'none';
+    if (dateInput) dateInput.classList.remove('field-error');
+    if (timeError) timeError.style.display = 'none';
+    if (timeSelect) timeSelect.classList.remove('field-error');
+
     // Validate service selection
     if (serviceSelect && !serviceSelect.value) {
         if (serviceError) {
             serviceError.style.display = 'block';
             serviceSelect.classList.add('field-error');
             serviceSelect.focus();
+        }
+        return false;
+    }
+
+    // Validate date selection
+    if (dateInput && !dateInput.value) {
+        if (dateError) {
+            dateError.style.display = 'block';
+            dateInput.classList.add('field-error');
+            dateInput.focus();
+        }
+        return false;
+    }
+
+    // Validate time selection
+    if (timeSelect && !timeSelect.value) {
+        if (timeError) {
+            timeError.style.display = 'block';
+            timeSelect.classList.add('field-error');
+            timeSelect.focus();
         }
         return false;
     }
@@ -205,6 +233,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.classList.remove('field-error');
                     const serviceError = document.getElementById('service-error');
                     if (serviceError) serviceError.style.display = 'none';
+                }
+            });
+        }
+
+        const dateInput = document.getElementById('appointmentDate');
+        if (dateInput) {
+            dateInput.addEventListener('change', function() {
+                if (this.value) {
+                    this.classList.remove('field-error');
+                    const dateError = document.getElementById('date-error');
+                    if (dateError) dateError.style.display = 'none';
+                }
+            });
+        }
+
+        const timeSelect = document.getElementById('appointmentTime');
+        if (timeSelect) {
+            timeSelect.addEventListener('change', function() {
+                if (this.value) {
+                    this.classList.remove('field-error');
+                    const timeError = document.getElementById('time-error');
+                    if (timeError) timeError.style.display = 'none';
                 }
             });
         }
